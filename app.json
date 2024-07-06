@@ -10,7 +10,14 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoibXJrdHNtIiwiYSI6ImNseWFsY29nOTE2YjkycXBuMDJwYWZlcG0ifQ.TYsnx4p2iCSkpOrimYmfMg",
+          "RNMapboxMapsVersion": "11.*"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
@@ -35,7 +42,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.Pinster"
     }
   }
 }
