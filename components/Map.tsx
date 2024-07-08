@@ -1,14 +1,25 @@
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import Mapbox, { Camera, LocationPuck, MapView, MarkerView } from '@rnmapbox/maps';
+import ImageMarker from '~/components/ImageMarker'; 
 
-import Mapbox, { Camera, LocationPuck, MapView } from '@rnmapbox/maps';
+Mapbox.setAccessToken(process.env.EXPO_PUBLIC_MAPBOX_KEY || '');
 
-const accessToken = 'pk.eyJ1IjoibXJrdHNtIiwiYSI6ImNseTlnYjV0aTBwcWMyaXBxZjV3MDJjOGsifQ.JPR_WsGDfQabgU7ePUAYEA';
-Mapbox.setAccessToken(accessToken);
+const Map = () => {
+  return (
+    <MapView
+      style={{ flex: 1 }}
+      styleURL='mapbox://styles/mapbox/dark-v11'
+      logoEnabled={false}
+    >
+      <Camera followZoomLevel={8} followUserLocation />
+      <LocationPuck />
 
-export default function Map () {
-    return (
-        <MapView style={{ flex: 1 }} styleURL="mapbox://styles/mapbox/dark-v11">
-            <Camera followZoomLevel={16} followUserLocation />
-            <LocationPuck />
-        </MapView>
-    );
-}
+      <ImageMarker image={require('~/assets/san-francisco.png')} coordinates={[-122.4194, 37.7749]}/>
+
+    </MapView>
+  );
+};
+
+export default Map;
+

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'Home' }} />
-      <Map />
+      <Map/>
     </>
   );
 }
