@@ -1,22 +1,23 @@
 import { MarkerView } from '@rnmapbox/maps';
 import React from 'react';
-import { View, Image, StyleSheet, ImageSourcePropType } from 'react-native';
+import { View, Image, StyleSheet, ImageSourcePropType, TouchableOpacity } from 'react-native';
 
 interface ImageMarkerProps {
   image: ImageSourcePropType;
   coordinates: number[];
+  onPress: () => void;
 }
 
-const ImageMarker: React.FC<ImageMarkerProps> = ({ image, coordinates }) => {
+const ImageMarker: React.FC<ImageMarkerProps> = ({ image, coordinates, onPress }) => {
   return (
     <MarkerView coordinate={coordinates} allowOverlapWithPuck={true}>
-       <View style={styles.container}>
+      <TouchableOpacity onPress={onPress} style={styles.container}>
         <View style={styles.outerCircle}>
           <View style={styles.innerCircle}>
             <Image source={image} style={styles.image} />
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </MarkerView>
   );
 };
