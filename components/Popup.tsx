@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     height: 450,
     padding: 20,
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 20,
     alignItems: 'center',
   },
   image: {
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   likeButton: {
-    marginTop: 10,
+    width: 300,
+    marginTop: 20,
     padding: 10,
     backgroundColor: '#007AFF',
     borderRadius: 5,

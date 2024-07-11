@@ -27,10 +27,12 @@ const Map: React.FC = () => {
     <View style={styles.container}>
       <MapView
         style={{ flex: 1 }}
-        styleURL="mapbox://styles/mapbox/dark-v11"
+        styleURL="mapbox://styles/mrktsm/clyhr3bxv01kp01qrhbko0uj1"
         logoEnabled={false}
+        scaleBarEnabled={false}
+        attributionEnabled={false}
       >
-        <Camera followZoomLevel={8} followUserLocation />
+        <Camera followZoomLevel={12} followUserLocation />
         <LocationPuck />
         <ImageMarker
           image={imageSource} // Pass local image source to ImageMarker

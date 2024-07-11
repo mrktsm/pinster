@@ -1,11 +1,7 @@
-import { Stack, Link } from 'expo-router';
-import Map from '~/components/Map';
+import { Redirect } from 'expo-router';
 
-export default function Home() {
-  return (
-    <>
-      <Stack.Screen options={{ title: 'Home' }} />
-      <Map/>
-    </>
-  );
+const StartPage = () => {
+    return <Redirect href="/Home" />;
 }
+
+export default StartPage;
