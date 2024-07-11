@@ -1,4 +1,3 @@
-// Popup.tsx
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Modal } from 'react-native';
 
@@ -9,11 +8,17 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = ({ visible, imageUrl, onClose }) => {
+  const handleImagePress = () => {
+    // Do nothing on image press to prevent closing the popup
+  };
+
   return (
     <Modal transparent={true} visible={visible} animationType="fade">
-      <TouchableOpacity style={styles.overlay} onPress={onClose}>
+      <TouchableOpacity style={styles.overlay} activeOpacity={1} onPress={onClose}>
         <View style={styles.popup}>
-          <Image source={imageUrl} style={styles.image} />
+          <TouchableOpacity activeOpacity={1} onPress={handleImagePress}>
+            <Image source={imageUrl} style={styles.image} />
+          </TouchableOpacity>
           <TouchableOpacity style={styles.likeButton}>
             <Text style={styles.likeText}>Like</Text>
           </TouchableOpacity>
