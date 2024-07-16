@@ -1,6 +1,7 @@
 import { MarkerView } from '@rnmapbox/maps';
 import React from 'react';
 import { View, Image, StyleSheet, ImageSourcePropType, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface ImageMarkerProps {
   image: ImageSourcePropType;
@@ -12,11 +13,16 @@ const ImageMarker: React.FC<ImageMarkerProps> = ({ image, coordinates, onPress }
   return (
     <MarkerView coordinate={coordinates} allowOverlapWithPuck={true}>
       <TouchableOpacity onPress={onPress} style={styles.container}>
-        <View style={styles.outerCircle}>
+        <LinearGradient
+          colors={['#FFA07A', '#E9446A']}  // Gradient colors for red shades
+          start={{ x: 0, y: 0 }}            // Gradient start point
+          end={{ x: 1, y: 1 }}              // Gradient end point
+          style={styles.outerCircle}
+        >
           <View style={styles.innerCircle}>
             <Image source={image} style={styles.image} />
           </View>
-        </View>
+        </LinearGradient>
       </TouchableOpacity>
     </MarkerView>
   );
@@ -30,20 +36,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   outerCircle: {
-    width: 68,
-    height: 68,
-    borderRadius: 34,
-    borderWidth: 2,
-    borderColor: 'white',
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    borderWidth: 2,          // White outline width
+    borderColor: 'white',    // White outline color
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#007AFF',
     overflow: 'hidden',
   },
   innerCircle: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
+    width: 70,
+    height: 70,
+    borderRadius: 35,
     backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
