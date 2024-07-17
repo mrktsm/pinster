@@ -13,7 +13,7 @@ const MainLayout = () => {
         const inApp = segments[0] =='(tabs)';
         if (isAuthenticated && !inApp){
             // redirect to home
-            router.replace('Home');
+            router.replace('MapScreen');
         } else if (isAuthenticated == false) {
             // redirect to sign in page
             router.replace('signIn');

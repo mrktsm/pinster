@@ -33,7 +33,7 @@ const Map: React.FC = () => {
         attributionEnabled={false}
       >
         <Camera followZoomLevel={12} followUserLocation />
-        <LocationPuck color='#00FF00'/>
+        <LocationPuck />
         <ImageMarker
           image={imageSource} // Pass local image source to ImageMarker
           coordinates={[-122.4194, 37.7749]}

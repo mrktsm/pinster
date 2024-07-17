@@ -33,6 +33,8 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
                 setIsAuthenticated(true);
                 // Assuming `user` is of type User from Firebase
                 setUser(user as User);
+                // when logging in you only get fraction of all user data so you need to implement the next
+                // updateUserData(user.uid); 
             } else {
                 setIsAuthenticated(false);
                 setUser(null);
@@ -49,7 +51,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
             let msg = e.message;
             if (msg.includes('(auth/invalid-email)')) msg='Invalid email';
             if (msg.includes('(auth/invalid-credential')) msg='Wrong credentials';
-            return { success: false, msg: e.message };
+            return { success: false, msg };
         }
     }
 
@@ -71,7 +73,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
             let msg = e.message;
             if (msg.includes('(auth/invalid-email)')) msg='Invalid email';
             if (msg.includes('(auth/email-already-in-use')) msg="This email is already in use";
-            return { success: false, msg: e.message };
+            return { success: false, msg};
         }
     }
 
