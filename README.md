@@ -40,19 +40,6 @@ Pinster is a location-based social media app designed for college communities. I
    npm start
    ```
 
-## File Structure
-
-```
-Pinster/
-│── components/
-│   ├── ImageMarker.tsx   # Custom marker component for images
-│── firebaseConfig.ts     # Firebase configuration
-│── screens/
-│   ├── Map.tsx           # Main Map screen
-│── App.tsx               # Entry point
-└── ...
-```
-
 ## Future Enhancements
 
 - 🗣 **Comments & Reactions**: Users can interact with posts.
