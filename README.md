@@ -1,5 +1,6 @@
 # 📍 Pinster
-![Untitled design](https://github.com/user-attachments/assets/0cc7eb25-b22e-412f-8317-275143c08a92)
+![Untitled design (2)](https://github.com/user-attachments/assets/2e6614f1-9aee-499e-aae7-b4c642e3b2fd)
+
 
 Pinster is a location-based social media app designed for college communities. Inspired by Instagram, Snapchat Maps, and Citizen, Pinster allows users to share real-time updates through map-based posts. The app leverages **Mapbox** for interactive mapping and **Firebase** for user authentication and data storage.
 
