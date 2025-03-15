@@ -54,5 +54,5 @@ Contributions are welcome! Feel free to submit pull requests or open issues.
 
 ## License
 
-MIT License © 2025 Pinster Team
+MIT License © 2025 Marko Tsymbaliuk
 
